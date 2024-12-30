@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-200 dark:bg-gray-900 antialiased font-sans;
+}
+
+main {
+    @apply h-full max-w-lg mx-auto mb-16 bg-gray-100 dark:bg-gray-800 dark:text-gray-200;
+}
+
+footer {
+    @apply fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600;
+}
+
+footer > nav {
+    @apply grid h-full max-w-lg grid-cols-4 mx-auto font-medium;
+}
