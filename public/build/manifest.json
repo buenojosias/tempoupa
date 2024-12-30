@@ -1,0 +1,18 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-DryfQOSl.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/mobile.css": {
+    "file": "assets/mobile-CP7RgUNL.css",
+    "src": "resources/css/mobile.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-Xaw6OIO1.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
