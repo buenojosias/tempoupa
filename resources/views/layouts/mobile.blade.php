@@ -4,9 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>{{ env('APP_NAME') }}</title>
-
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     <tallstackui:script />
@@ -14,6 +12,10 @@
     <link rel="stylesheet" href="{{ asset('build/assets/mobile-R3lpHcMN.css') }}">
     <script src="{{ asset('build/assets/app-Xaw6OIO1.js') }}" defer></script>
     {{-- @vite(['resources/css/mobile.css', 'resources/js/app.js']) --}}
+    <!– PWA –>
+        <meta name="theme-color" content="#6777ef" />
+        <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
+        <link rel="manifest" href="{{ asset('/manifest.json') }}">
 </head>
 
 <body>
@@ -67,6 +69,15 @@
             </button>
         </nav>
     </footer>
+    <script src="{{ asset('/sw.js') }}"></script>
+    <script>
+        if (!navigator.serviceWorker.controller) {
+            navigator.serviceWorker.register("/sw.js").
+            then(function(reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    </script>
 </body>
 
 </html>
