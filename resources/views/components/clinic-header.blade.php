@@ -10,7 +10,7 @@
             <a href="{{ route('mobile.clinics.situation', 1) }}" class="{{ request()->routeIs('mobile.clinics.situation') ? 'active' : '' }}">Situação</a>
         </li>
         <li class="me-2">
-            <a href="#" class="">Média</a>
+            <a href="#" class="">Métricas</a>
         </li>
         <li class="me-2">
             <a href="#" class="">Avaliações</a>

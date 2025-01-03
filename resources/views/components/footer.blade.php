@@ -9,16 +9,20 @@
             <span>UPAs</span>
         </a>
         <a href="#" class="">
+            <x-ts-icon name="stethoscope" class="footer-icon" />
+            <span>Consulta</span>
+        </a>
+        {{-- <a href="#" class="">
             <x-ts-icon name="circle-plus" class="footer-icon" />
             <span>Adicionar</span>
-        </a>
+        </a> --}}
         <a href="#" class="">
             <x-ts-icon name="user" class="footer-icon" />
             <span>Conta</span>
         </a>
         <a href="#" class="">
-            <x-ts-icon name="menu-2" class="footer-icon" />
-            <span>Mais</span>
+            <x-ts-icon name="help" class="footer-icon" />
+            <span>Ajuda</span>
         </a>
     </nav>
 </footer>

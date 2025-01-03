@@ -39,7 +39,7 @@ footer > nav > a.active > span {
     @apply text-4xl font-semibold text-gray-50;
 }
 .clinic-navstack {
-    @apply mb-2 overflow-x-auto overflow-y-hidden text-sm font-semibold text-center bg-white dark:bg-gray-800 text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700;
+    @apply sticky top-0 !z-50 mb-2 overflow-x-auto overflow-y-hidden text-sm font-semibold text-center bg-white dark:bg-gray-800 text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700;
 }
 .clinic-navstack > ul {
     @apply flex flex-nowrap -mb-px text-nowrap;

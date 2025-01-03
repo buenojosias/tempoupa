@@ -1,4 +1,4 @@
-<div class="sticky top-0 mb-4">
+<div class="sticky top-0 mb-4 z-50">
     <div class="p-4 shadow bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
         {{-- @if ($slot)
             {{ $slot }}

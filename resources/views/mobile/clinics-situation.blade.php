@@ -1,7 +1,9 @@
 <x-mobile-layout>
     <x-clinic-header />
 
+
     <section class="space-y-3">
+        <x-ts-select.native label="Grupo" :options="['Geral','Pediatria']" />
         <x-ts-card header="Tempo de espera por classificação" class="space-y-2">
             <div class="flex justify-between items-center border-l-4 border-blue-600 pl-3">
                 <dl class="text-sm">
@@ -24,6 +26,12 @@
             <div class="flex justify-between items-center border-l-4 border-red-600 pl-3">
                 <dl class="text-sm">
                     <dt class="text-red-600 font-semibold">Vermelho</dt>
+                    <dd>{{ rand(0, 10) }}h {{ rand(0, 59) }}min</dd>
+                </dl>
+            </div>
+            <div class="flex justify-between items-center border-l-4 border-slate-600 pl-3">
+                <dl class="text-sm">
+                    <dt class="text-slate-600 font-semibold">Média</dt>
                     <dd>{{ rand(0, 10) }}h {{ rand(0, 59) }}min</dd>
                 </dl>
             </div>
@@ -61,6 +69,12 @@
             <div class="flex justify-between items-center border-l-4 border-red-600 pl-3">
                 <dl class="text-sm">
                     <dt class="text-red-600 font-semibold">Vermelho</dt>
+                    <dd>{{ rand(3, 30) }}</dd>
+                </dl>
+            </div>
+            <div class="flex justify-between items-center border-l-4 border-slate-600 pl-3">
+                <dl class="text-sm">
+                    <dt class="text-slate-600 font-semibold">Total</dt>
                     <dd>{{ rand(3, 30) }}</dd>
                 </dl>
             </div>
