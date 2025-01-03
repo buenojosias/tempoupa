@@ -31,11 +31,11 @@
                 </div>
                 <x-ts-rating static :rate="rand(1, 5)" color="amber" sm />
                 <div class="text-center mt-4">
-                    <x-ts-link text="Ver detalhes" href="upas/1" />
+                    <x-ts-link text="Ver detalhes" :href="route('mobile.clinics.show', 1)" />
                 </div>
             </x-ts-card>
         @endfor
-        <p class="border-t mt-4 pt-4 text-center text-gray-900">A UPA que você procura não está na lista?<br />
+        <p class="pt-4 text-center text-gray-900">A UPA que você procura não está na lista?<br />
             <a href="#" class="text-gray-800 font-semibold underline">Envie-nos uma sugestão</a> para adicioná-la.</p>
     </section>
 

@@ -17,3 +17,36 @@ footer {
 footer > nav {
     @apply grid h-full max-w-lg grid-cols-5 mx-auto font-medium;
 }
+footer > nav > a {
+    @apply inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800;
+}
+footer > nav > a > .footer-icon {
+    @apply w-5 h-5 mb-1 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500;
+}
+footer > nav > a > span {
+    @apply text-xs text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500;
+}
+footer > nav > a.active > .footer-icon {
+    @apply text-primary-500 dark:text-primary-500;
+}
+footer > nav > a.active > span {
+    @apply text-primary-500 dark:text-primary-500;
+}
+.clinic-header {
+    @apply px-4 pt-10 pb-8 bg-gray-600 min-h-36;
+}
+.clinic-header > h1 {
+    @apply text-4xl font-semibold text-gray-50;
+}
+.clinic-navstack {
+    @apply mb-2 overflow-x-auto overflow-y-hidden text-sm font-semibold text-center bg-white dark:bg-gray-800 text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700;
+}
+.clinic-navstack > ul {
+    @apply flex flex-nowrap -mb-px text-nowrap;
+}
+.clinic-navstack > ul > li > a {
+    @apply inline-block px-3 py-3 border-b-4 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300;
+}
+.clinic-navstack > ul > li > a.active {
+    @apply text-primary border-primary dark:text-blue-500 dark:border-blue-500;
+}

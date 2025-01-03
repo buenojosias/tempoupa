@@ -1,39 +1,24 @@
 <footer>
     <nav>
-        <a href="/"
-            class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
-            <x-ts-icon name="home"
-                class="w-6 h-6 mb-1 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" />
-            <span
-                class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Home</span>
+        <a href="{{ route('mobile.home') }}" class="{{ request()->routeIs('mobile.home') ? 'active' : '' }}">
+            <x-ts-icon name="home" class="footer-icon" />
+            <span>Home</span>
         </a>
-        <a href="upas"
-            class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
-            <x-ts-icon name="building-hospital"
-                class="w-6 h-6 mb-1 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" />
-            <span
-                class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">UPAs</span>
+        <a href="{{ route('mobile.clinics.index') }}" class="{{ request()->routeIs('mobile.clinics*') ? 'active' : '' }}">
+            <x-ts-icon name="building-hospital" class="footer-icon" />
+            <span>UPAs</span>
         </a>
-        <a href="#"
-            class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
-            <x-ts-icon name="circle-plus"
-                class="w-6 h-6 mb-1 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" />
-            <span
-                class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Adicionar</span>
+        <a href="#" class="">
+            <x-ts-icon name="circle-plus" class="footer-icon" />
+            <span>Adicionar</span>
         </a>
-        <a href="#"
-            class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
-            <x-ts-icon name="user"
-                class="w-6 h-6 mb-1 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" />
-            <span
-                class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Conta</span>
+        <a href="#" class="">
+            <x-ts-icon name="user" class="footer-icon" />
+            <span>Conta</span>
         </a>
-        <a href="#"
-            class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
-            <x-ts-icon name="menu-2"
-                class="w-6 h-6 mb-1 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" />
-            <span
-                class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Mais</span>
+        <a href="#" class="">
+            <x-ts-icon name="menu-2" class="footer-icon" />
+            <span>Mais</span>
         </a>
     </nav>
 </footer>

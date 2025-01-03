@@ -1,4 +1,5 @@
 <x-mobile-layout>
+    <x-header />
     <section class="space-y-4">
         <h1 class="text-2xl font-semibold">Bem vindo(a) ao Tempo UPA</h1>
         <h2 class="text-gray-600">Acompanhe em tempo real a situação das Unidades de Pronto Atendimento perto de você</h2>
@@ -6,10 +7,11 @@
         {{-- Se tiver registro de atendimento em andamento --}}
         <x-ts-card header="Atendimento atual">
             <p>Você informou que está [<strong>aguardando consulta</strong>] na UPA [Boa Vista].</p>
-            <x-ts-button text="Atualizar etapa" />
-            <x-ts-button text="Informar condições" />
+            <x-slot:footer>
+                <x-ts-button text="Atualizar etapa" flat sm />
+                <x-ts-button text="Informar situação" flat sm />
+            </x-slot>
         </x-ts-card>
-
 
         {{-- Se não estiver logado --}}
         <x-ts-card>
@@ -17,11 +19,14 @@
         </x-ts-card>
 
         {{-- Se não tiver atendimento aberto --}}
-        <x-ts-card header="Estou em uma UPA">
-            <x-ts-button text="Compartilhe informações da condição atual!" />
+        <x-ts-card header="Você está em uma UPA">
+            <p>Contribua com outros usuários informando a situação atual da mesma.</p>
+            <x-slot:footer>
+                <x-ts-button text="Informar situação" sm />
+            </x-slot>
         </x-ts-card>
 
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-2 space-x-2">
             <x-ts-card header="UPA com menor tempo"></x-ts-card>
             <x-ts-card header="UPA mais próxima"></x-ts-card>
         </div>

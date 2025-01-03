@@ -21,22 +21,22 @@
                 <x-ts-icon name="users" class="h-9 w-9 text-gray-400" />
                 <dl>
                     <dt class="text-sm text-gray-600 font-semibold">Pacientes aguardando</dt>
-                    <dd class="text-lg">{{ rand(10, 100) }}</dd>
+                    <dd class="text-lg text-gray-900">{{ rand(10, 100) }}</dd>
                 </dl>
             </div>
             <div class="flex items-center space-x-2">
                 <x-ts-icon name="clock" class="h-9 w-9 text-gray-400" />
                 <dl>
                     <dt class="text-sm text-gray-600 font-semibold">Tempo médio de espera</dt>
-                    <dd class="text-lg">{{ rand(0, 10) }}h {{ rand(0, 59) }}min</dd>
+                    <dd class="text-lg text-gray-900">{{ rand(0, 10) }}h {{ rand(0, 59) }}min</dd>
                 </dl>
             </div>
             <div class="text-center pt-4 border-t">
-                <x-ts-link text="Ver situação completa" href="/upas/1/situacao" />
+                <x-ts-link text="Ver situação completa" :href="route('mobile.clinics.situation', 1)" />
             </div>
         </x-ts-card>
 
-        <x-ts-button text="Estou nesta UPA" class="w-full" />
+        <x-ts-button text="Estou nesta UPA" color="secondary" class="w-full" lg />
     </section>
 
 </x-mobile-layout>

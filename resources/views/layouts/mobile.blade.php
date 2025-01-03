@@ -10,9 +10,9 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     <tallstackui:script />
     @livewireStyles
-    <link rel="stylesheet" href="{{ asset('build/assets/mobile-BjK4nLPB.css') }}">
-    <script src="{{ asset('build/assets/app-Xaw6OIO1.js') }}" defer></script>
-    {{-- @vite(['resources/css/mobile.css', 'resources/js/app.js']) --}}
+    {{-- <link rel="stylesheet" href="{{ asset('build/assets/mobile-BjK4nLPB.css') }}">
+    <script src="{{ asset('build/assets/app-Xaw6OIO1.js') }}" defer></script> --}}
+    @vite(['resources/css/mobile.css', 'resources/js/app.js'])
     <!-- PWA  -->
     <meta name="theme-color" content="#6777ef" />
     <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
