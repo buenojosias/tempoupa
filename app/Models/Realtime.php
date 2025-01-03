@@ -9,10 +9,14 @@ class Realtime extends Model
 {
     protected $fillable = [
         'clinic_id',
+        'type',
         'group',
-        'classification',
-        'label',
-        'value',
+        'blue',
+        'green',
+        'yellow',
+        'red',
+        'total',
+        'situation',
         'updated_by_user_id',
     ];
 
