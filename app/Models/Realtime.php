@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\SituationEnum;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -24,6 +25,7 @@ class Realtime extends Model
     {
         return [
             'value' => 'integer',
+            'situation' => SituationEnum::class,
         ];
     }
 
@@ -35,5 +37,17 @@ class Realtime extends Model
     public function updatedByUser(): BelongsTo
     {
         return $this->belongsTo(User::class, 'updated_by_user_id');
+    }
+
+    // mutator to convert each $this->clinics->total to hours and minutes where type === 'time'
+    public function getTotalAttribute($value)
+    {
+        if ($this->type === 'time') {
+            $hours = floor($value / 60);
+            $minutes = $value % 60;
+            return $hours . 'h ' . $minutes . 'min';
+        }
+
+        return $value;
     }
 }

@@ -14,18 +14,16 @@
     <script src="{{ asset('build/assets/app-Xaw6OIO1.js') }}" defer></script> --}}
     @vite(['resources/css/mobile.css', 'resources/js/app.js'])
     <!-- PWA  -->
-    <meta name="theme-color" content="#6777ef" />
+    {{-- <meta name="theme-color" content="#6777ef" />
     <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
-    <link rel="manifest" href="{{ asset('/manifest.json') }}">
+    <link rel="manifest" href="{{ asset('/manifest.json') }}"> --}}
 </head>
 
 <body>
-    <main class="min-h-screen">
-        {{ $slot }}
-    </main>
+    {{ $slot }}
     <x-footer />
-    <script src="{{ asset('/sw.js') }}"></script>
-    <script>
+    {{-- <script src="{{ asset('/sw.js') }}"></script> --}}
+    {{-- <script>
         if ("serviceWorker" in navigator) {
             // Register a service worker hosted at the root of the
             // site using the default scope.
@@ -40,7 +38,7 @@
         } else {
             console.error("Service workers are not supported.");
         }
-    </script>
+    </script> --}}
     @livewireScripts
 </body>
 

@@ -14,6 +14,7 @@
         "tallstackui/tallstackui": "^1.37"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.14",
         "fakerphp/faker": "^1.23",
         "ladumor/laravel-pwa": "^0.0.4",
         "laravel/breeze": "^2.3",

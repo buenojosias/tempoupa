@@ -1,5 +1,8 @@
+@props(['clinic' => null])
+
 <div class="clinic-header">
-    <h1>UPA Boa vista</h1>
+    <h1>{{ $clinic->type ?? 'Carregando...' }} {{ $clinic->name ?? '' }}</h1>
+    {{ request()->route()->getName() }}
 </div>
 <div class="clinic-navstack">
     <ul>

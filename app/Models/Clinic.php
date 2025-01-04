@@ -54,14 +54,19 @@ class Clinic extends Model
         return $this->hasMany(Consultation::class);
     }
 
-    public function reviews(): HasManyThrough
+    public function realtimes(): HasMany
     {
-        return $this->hasManyThrough(Review::class, Consultation::class);
+        return $this->hasMany(Realtime::class);
     }
 
     public function records(): HasMany
     {
         return $this->hasMany(Record::class);
+    }
+
+    public function reviews(): HasManyThrough
+    {
+        return $this->hasManyThrough(Review::class, Consultation::class);
     }
 
     public function situations(): HasMany
