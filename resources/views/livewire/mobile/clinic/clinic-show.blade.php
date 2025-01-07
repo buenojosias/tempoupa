@@ -2,7 +2,9 @@
     <x-clinic-header :clinic="$clinic" />
     @if ($clinic)
         <section class="space-y-3">
-            <x-ts-alert :text="$quantity->situation->getLabel()" :color="$quantity->situation->getColor()" />
+            @if (in_array($quantity->situation->value, ['L', 'S']))
+                <x-ts-alert :text="$quantity->situation->getLabel()" :color="$quantity->situation->getColor()" />
+            @endif
             <x-ts-card header="Endereço" class="space-y-3">
                 <p>{{ $clinic->address }}<br />
                     {{ $clinic->neighborhood }}, {{ $clinic->city->name }} -
@@ -13,12 +15,12 @@
                         (Autorize a localização para ver a distância)
                     @endif
                 </p>
-                @if ($clinic->rating)
+                {{-- @if ($clinic->rating)
                     <div class="flex items-center space-x-2 mt-2 pt-2 border-t">
                         <span>{{ $clinic->rating }}</span>
                         <x-ts-rating static :rate="$clinic->rating" color="amber" sm />
                     </div>
-                @endif
+                @endif --}}
             </x-ts-card>
             <x-ts-card header="Situação atual" class="space-y-3">
                 <div class="flex items-center space-x-2">

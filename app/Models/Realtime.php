@@ -39,15 +39,31 @@ class Realtime extends Model
         return $this->belongsTo(User::class, 'updated_by_user_id');
     }
 
-    // mutator to convert each $this->clinics->total to hours and minutes where type === 'time'
-    public function getTotalAttribute($value)
+    public function __get($key)
     {
-        if ($this->type === 'time') {
-            $hours = floor($value / 60);
-            $minutes = $value % 60;
-            return $hours . 'h ' . $minutes . 'min';
+        // Verifica se o campo solicitado é um dos que devem ser formatados
+        if (in_array($key, ['blue', 'green', 'yellow', 'red', 'total']) && $this->type === 'time') {
+            $value = $this->attributes[$key] ?? 0; // Valor em minutos (padrão 0 se não definido)
+            return $this->formatMinutesToReadable($value);
         }
 
-        return $value;
+        // Caso contrário, retorna o comportamento padrão
+        return parent::__get($key);
+    }
+
+    private function formatMinutesToReadable($minutes)
+    {
+        if ($minutes < 60) {
+            return "{$minutes}min"; // Apenas minutos se for menor que 1 hora
+        }
+
+        $hours = intdiv($minutes, 60); // Calcula as horas
+        $remainingMinutes = $minutes % 60; // Calcula os minutos restantes
+
+        if ($remainingMinutes === 0) {
+            return "{$hours}h"; // Apenas horas se não houver minutos restantes
+        }
+
+        return "{$hours}h {$remainingMinutes}min"; // Formato completo
     }
 }
