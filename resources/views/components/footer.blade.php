@@ -8,9 +8,9 @@
             <x-ts-icon name="building-hospital" class="footer-icon" />
             <span>UPAs</span>
         </a>
-        <a href="#" class="">
+        <a href="{{ route('mobile.consultations.index') }}" class="{{ request()->routeIs('mobile.consultations*') ? 'active' : '' }}">
             <x-ts-icon name="stethoscope" class="footer-icon" />
-            <span>Consulta</span>
+            <span>Consultas</span>
         </a>
         {{-- <a href="#" class="">
             <x-ts-icon name="circle-plus" class="footer-icon" />

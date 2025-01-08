@@ -11,31 +11,35 @@
         @livewire('mobile.dashboard.swiper', ['nearestClinic' => $nearestClinic, 'bestClinic' => $bestClinic])
     @endif --}}
     <section class="mt-2 space-y-4">
-        {{-- Se tiver registro de atendimento em andamento --}}
-        <x-ts-card header="Atendimento atual">
-            <p>Você informou que está [<strong>aguardando consulta</strong>] na UPA [Boa Vista].</p>
-            <x-slot:footer>
-                <x-ts-button text="Atualizar etapa" flat sm />
-                <x-ts-button text="Informar situação" flat sm />
-            </x-slot>
-        </x-ts-card>
+        @if ($currentConsultation)
+            <x-ts-card header="Atendimento atual">
+                <p>Você informou que está <strong>{{ $currentConsultation->status->getLabel() }}</strong> na
+                    {{ $currentConsultation->clinic->type }} {{ $currentConsultation->clinic->name }}.</p>
+                <x-slot:footer>
+                    <x-ts-button text="Atualizar etapa" flat sm />
+                    <x-ts-button text="Informar situação" flat sm />
+                </x-slot>
+            </x-ts-card>
+        @endif
 
-        {{-- Se não estiver logado --}}
-        <x-ts-card>
-            Faça login ou crie uma conta ou para ter uma experiência personalizada.
-            <x-slot:footer>
-                <x-ts-button text="Fazer login" outline sm />
-                <x-ts-button text="Criar conta" sm />
-            </x-slot:footer>
-        </x-ts-card>
+        @if (!auth()->user())
+            <x-ts-card>
+                Faça login ou crie uma conta ou para ter uma experiência personalizada.
+                <x-slot:footer>
+                    <x-ts-button text="Fazer login" outline sm />
+                    <x-ts-button text="Criar conta" sm />
+                </x-slot:footer>
+            </x-ts-card>
+        @endif
 
-        {{-- Se não tiver atendimento aberto --}}
-        <x-ts-card header="Você está em uma UPA?">
-            <p>Contribua com outros usuários informando a situação atual da mesma.</p>
-            <x-slot:footer>
-                <x-ts-button text="Informar situação" sm />
-            </x-slot>
-        </x-ts-card>
+        @if (!$currentConsultation)
+            <x-ts-card header="Você está em uma UPA?">
+                <p>Contribua com outros usuários informando a situação atual da mesma.</p>
+                <x-slot:footer>
+                    <x-ts-button text="Informar situação" sm />
+                </x-slot>
+            </x-ts-card>
+        @endif
 
         <x-ts-button text="Listar todas as UPAs" class="w-full" />
     </section>

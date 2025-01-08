@@ -36,7 +36,9 @@
             <x-slot:footer>
                 <div class="w-full flex justify-between items-center">
                     <div class="text-sm text-gray-600">
-                        Atualizado há {{ rand(0, 59) }} min
+                        @if (@$quantity->updated_at)
+                            Atualizado {{ $time->updated_at->diffForHumans() }}
+                        @endif
                     </div>
                     <div>
                         <x-ts-button text="Atualizar" sm />

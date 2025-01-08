@@ -15,6 +15,7 @@ class Dashboard extends Component
     public $bestClinic = null;
     public $fastestClinic = null;
     public $nearestClinic = null;
+    public $currentConsultation = null;
 
     public $latitude = null;
     public $longitude = null;
@@ -31,6 +32,20 @@ class Dashboard extends Component
         $this->clinicsCount = $this->clinics->count();
         $this->bestClinic = $this->clinics->sortByDesc('rating')->first();
         $this->fastestClinic = $this->clinics->sortBy('realtimes.total')->first();
+
+        $this->getCurrentConsultation();
+    }
+
+    public function getCurrentConsultation()
+    {
+        if (auth()->user()) {
+            $this->currentConsultation = auth()
+                ->user()
+                ->consultations()
+                ->where('status', '<', 5)
+                ->with('clinic')
+                ->first();
+        }
     }
 
     private function haversineDistance($lat1, $lon1, $lat2, $lon2)

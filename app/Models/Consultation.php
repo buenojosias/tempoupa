@@ -2,12 +2,17 @@
 
 namespace App\Models;
 
+use App\Enums\ClassificationEnum;
+use App\Enums\ConsultationEnum;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Consultation extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'clinic_id',
         'user_id',
@@ -25,6 +30,8 @@ class Consultation extends Model
             'entry_time' => 'datetime',
             'consultation_time' => 'datetime',
             'departure_time' => 'datetime',
+            'classification' => ClassificationEnum::class,
+            'status' => ConsultationEnum::class,
         ];
     }
 

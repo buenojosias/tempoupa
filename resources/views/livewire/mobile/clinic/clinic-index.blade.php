@@ -5,7 +5,9 @@
         </div>
     </x-header>
     <section class="space-y-3">
-        <div>Barra de filtro</div>
+        <div class="mb-4">
+            <x-ts-input placeholder="Buscar UPA" icon="search" position="right" />
+        </div>
 
         @foreach ($clinics as $clinic)
             <x-ts-card>
@@ -46,7 +48,7 @@
                 </div>
             </x-ts-card>
         @endforeach
-        <p class="pt-4 text-center text-gray-900">A UPA que você procura não está na lista?<br />
+        <p class="pt-4 text-center text-sm text-gray-900">A UPA que você procura não está na lista?<br />
             <a href="#" class="text-gray-800 font-semibold underline">Envie-nos uma sugestão</a> para adicioná-la.
         </p>
     </section>

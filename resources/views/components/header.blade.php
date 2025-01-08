@@ -10,8 +10,8 @@
                 </a>
             </div>
             <div>
-                <a href="/login" class="text-gray-900 dark:text-white">Login</a>
-                <a href="/register" class="text-gray-900 dark:text-white">Register</a>
+                {{-- <a href="/login" class="text-gray-900 dark:text-white">Login</a>
+                <a href="/register" class="text-gray-900 dark:text-white">Register</a> --}}
             </div>
         </div>
         {{-- @endif --}}

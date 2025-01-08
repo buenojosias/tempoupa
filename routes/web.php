@@ -3,6 +3,7 @@
 use App\Livewire\Mobile\Clinic\ClinicIndex;
 use App\Livewire\Mobile\Clinic\ClinicShow;
 use App\Livewire\Mobile\Clinic\ClinicSituation;
+use App\Livewire\Mobile\Consultation\ConsultationIndex;
 use App\Livewire\Mobile\Dashboard;
 use Illuminate\Support\Facades\Route;
 
@@ -10,6 +11,8 @@ Route::get('/', Dashboard::class)->name('mobile.home');
 Route::get('/upas', ClinicIndex::class)->name('mobile.clinics.index');
 Route::get('/upas/{clinic}', ClinicShow::class)->name('mobile.clinics.show');
 Route::get('/upas/{clinic}/situation', ClinicSituation::class)->name('mobile.clinics.situation');
+
+Route::get('/consultas', ConsultationIndex::class)->name('mobile.consultations.index');
 
 // Route::view('/', 'welcome');
 // Route::get('/', function () { return view('mobile.home'); })->name('mobile.home');
